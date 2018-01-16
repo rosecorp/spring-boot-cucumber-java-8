@@ -21,7 +21,6 @@ public class AppStepDef extends CucumberRoot {
             response = template.getForEntity("/app", String.class);
         });
 
-
         When("^the client receives response status code of (\\d+)$", (Integer statusCode) -> {
             HttpStatus currentStatusCode = response.getStatusCode();
             assertThat("status code is correct : " +
